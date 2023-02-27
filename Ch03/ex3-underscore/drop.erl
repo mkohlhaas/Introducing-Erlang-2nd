@@ -1,5 +1,6 @@
 -module(drop).
--export([fall_velocity/2]). 
 
+-export([fall_velocity/2]).
 
-fall_velocity(Planemo, Distance) -> math:sqrt(2 * 9.8 * Distance).
+fall_velocity(_Planemo, Distance) ->
+  math:sqrt(2 * 9.8 * Distance).
