@@ -1,8 +1,11 @@
 -module(listdrop).
--export([falls/1]). 
 
-falls(List) -> falls(List,[]).
+-export([falls/1]).
 
-falls([], Results) -> lists:reverse(Results);
+falls(List) ->
+  falls(List, []).
 
-falls([Head|Tail], Results) -> falls(Tail, [drop:fall_velocity(Head) | Results]).
+falls([], Results) ->
+  lists:reverse(Results);
+falls([Head | Tail], Results) ->
+  falls(Tail, [drop:fall_velocity(Head) | Results]).
